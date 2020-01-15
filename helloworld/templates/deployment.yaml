@@ -28,7 +28,6 @@ items:
           version: 1.0.0
       spec:
         containers:
-        - image: failure
           imagePullPolicy: {{ .Values.helloworld.image.pullPolicy }}
           livenessProbe:
             initialDelaySeconds: 60
