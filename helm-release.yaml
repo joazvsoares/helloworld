@@ -1,0 +1,21 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: hello-world
+  namespace: default
+spec:
+  releaseName: hello-world
+  targetNamespace: default
+  rollback:
+    enable: true
+    force: true
+    disableHooks: true
+    timeout: 300
+    wait: true
+  chart:
+    git: git@github.com:joazvsoares/helloworld.git
+    ref: master
+    path: helloworld
+  values:
+    image:
+      tag: latest
